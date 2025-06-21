@@ -1,0 +1,48 @@
+{
+  "name": "@starforged-refinery/roll20",
+  "version": "0.0.1",
+  "type": "module",
+  "packageManager": "pnpm@9.10.0",
+  "license": "MIT",
+  "description": "CLI tool for creating optimised JSON objects for Roll20's Ironsworn: Starforged character sheet.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aureyia/starforged-refinery"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
+  },
+  "scripts": {
+    "build": "tsup && pnpm copy-package-json",
+    "build:ts": "tsup",
+    "clean": "rimraf dist/*",
+    "check": "tsc -b tsconfig.json",
+    "format": "biome format --write ./src",
+    "lint": "biome lint",
+    "lint:fix": "pnpm lint --write ./src",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "copy-package-json": "tsx scripts/copy-package-json.ts"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.0.0",
+    "@effect/cli": "0.64.2",
+    "@effect/language-service": "0.1.0",
+    "@effect/platform": "0.85.2",
+    "@effect/platform-node": "0.86.4",
+    "@effect/vitest": "0.23.8",
+    "@types/node": "22.15.32",
+    "effect": "3.16.8",
+    "tsup": "8.5.0",
+    "tsx": "4.20.3",
+    "typescript": "5.8.3",
+    "vitest": "3.2.4"
+  },
+  "pnpm": {
+    "patchedDependencies": {}
+  },
+  "dependencies": {
+    "dataforged": "1.5.3"
+  }
+}
